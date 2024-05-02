@@ -1,0 +1,1 @@
+# osrs-bad-luck-mitigation
