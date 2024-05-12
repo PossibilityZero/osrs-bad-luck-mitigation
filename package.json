@@ -5,11 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "jest -o",
-    "test-watch": "jest --watchAll",
-    "test-full": "jest --verbose --coverage",
-    "test-precommit": "jest --coverage",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js -o",
+    "test-watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
+    "test-full": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --coverage",
+    "test-precommit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "build": "webpack",
+    "build-watch": "webpack --watch",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write",
     "lint": "eslint src"
   },
@@ -35,5 +36,8 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
+  },
+  "jest": {
+    "transform": {}
   }
 }
