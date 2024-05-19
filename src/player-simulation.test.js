@@ -27,7 +27,7 @@ describe('PlayerSimulation', () => {
         model: BaseModelSimulation,
       };
       player.addItem(item);
-      expect(player.items).toContain(item);
+      expect(player.items).toHaveLength(1);
     });
   });
 
@@ -123,7 +123,6 @@ describe('ItemFarmerSimulation', () => {
       testSetupGuaranteeDrop();
       farmer.addItem(item);
       farmer.simulateKill('book', 100);
-      console.log(farmer.getResults('book'));
       expect(farmer.isSatisfied('book')).toBe(false);
     });
 

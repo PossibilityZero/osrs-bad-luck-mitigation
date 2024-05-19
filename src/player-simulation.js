@@ -4,10 +4,17 @@ class PlayerSim {
   }
 
   addItem(item) {
-    item.simulation = new item.model({
-      dropRate: item.dropRate.num / item.dropRate.denom,
-    });
-    this.items.push(item);
+    const newItem = {
+      name: item.name,
+      dropRate: {
+        num: item.dropRate.num,
+        denom: item.dropRate.denom,
+      },
+      simulation: new item.model({
+        dropRate: item.dropRate.num / item.dropRate.denom,
+      }),
+    };
+    this.items.push(newItem);
   }
 
   simulateKill(itemName, count = 1) {
